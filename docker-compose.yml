@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  dev-environment:
+    # Constrói a imagem a partir do Dockerfile no diretório atual
+    build: .
+    # Nome do contêiner para fácil referência
+    container_name: gemini
+    # Mantenha o contêiner em execução
+    tty: true
+    # Mapeia o diretório atual do seu host para o diretório /app no contêiner
+    # Isso permite que você edite arquivos localmente e os execute dentro do contêiner
+    volumes:
+      - .:/app
